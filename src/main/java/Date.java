@@ -10,9 +10,8 @@ public class Date {
      * @param year the year
      * @return true if the year is a leap year; otherwise false.
      */
-    public static boolean isLeapYear(int year){
-        //TODO: replace this line and the next with your code.
-        return false;
+    public static boolean isLeapYear(int year) {
+        return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
     }
 
     /**
@@ -21,8 +20,24 @@ public class Date {
      * @return the name of the day given by dayValue
      */
     public static String getNameOfDay(int dayValue){
-        //TODO: replace this line with your code.
-        return null;
+
+        if (dayValue >= 0) {
+            dayValue %= 7;
+        } else {
+            dayValue = dayValue % 7 + 7;
+        }
+
+
+        return switch (dayValue) {
+            case 0 -> "Sunday";
+            case 1 -> "Monday";
+            case 2 -> "Tuesday";
+            case 3 -> "Wednesday";
+            case 4 -> "Thursday";
+            case 5 -> "Friday";
+            case 6 -> "Saturday";
+            default -> null;
+        };
     }
 
     /**\
@@ -35,7 +50,33 @@ public class Date {
      * @return the numeric value of the month.
      */
     public static int getMonthNumber(String name){
-        //TODO: replace this line and next with your code.
+        switch (name.toLowerCase()) {
+            case "january":
+                return 1;
+            case "february":
+                return 2;
+            case "march":
+                return 3;
+            case "april":
+                return 4;
+            case "may":
+                return 5;
+            case "june":
+                return 6;
+            case "july":
+                return 7;
+            case "august":
+                return 8;
+            case "september":
+                return 9;
+            case "october":
+                return 10;
+            case "november":
+                return 11;
+            case "december":
+                return 12;
+
+        };
         return -1;
     }
 
@@ -49,7 +90,33 @@ public class Date {
      * @return the name of the month given the numeric value provided by month
      */
     public static String getMonthName(int month){
-        //TODO: replace this line and next with your code.
+        switch (month) {
+            case 1:
+                return "January";
+            case 2:
+                return "February";
+            case 3:
+                return "March";
+            case 4:
+                return "April";
+            case 5:
+                return "May";
+            case 6:
+                return "June";
+            case 7:
+                return "July";
+            case 8:
+                return "August";
+            case 9:
+                return "September";
+            case 10:
+                return "October";
+            case 11:
+                return "November";
+            case 12:
+                return "December";
+
+        };
         return null;
     }
 
@@ -61,6 +128,10 @@ public class Date {
      */
     public static int getDaysInMonth(int month, int year){
         //TODO: replace this line and next with your code.
+        if (month >= 1 && month <= 12 && year >= 1 && year <= 12) {
+
+
+        }
         return -1;
     }
 
